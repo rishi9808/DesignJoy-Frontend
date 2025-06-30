@@ -24,12 +24,18 @@
 }
 
 .latestProjects .lpImg {
-    height: 450px;
+    height: 650px;
     width: auto;
     margin-right: .5rem;
     transition: transform 0.3s ease;
     border-radius: 12px;
     /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+}
+
+@media (max-width: 1024px) {
+    .latestProjects .lpImg {
+        height: 450px;
+    }
 }
 
 
