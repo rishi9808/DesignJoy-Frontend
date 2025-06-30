@@ -55,8 +55,6 @@ const Footer = () => {
                     <ul className={styles.footer__links_list}>
                         <li><a href="#howwework">How we work</a></li>
                         <li><a href="#faq">FAQs</a></li>
-                        <li><a href="#terms">Terms & conditions</a></li>
-                        <li><a href="#privacy">Privacy policy</a></li>
                     </ul>
                 </div>
             </div>
