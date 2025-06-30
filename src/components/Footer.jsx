@@ -41,7 +41,7 @@ const Footer = () => {
                     </div>
                     <div className={styles.footer__location}>
                         {/* <img src={footerImg} alt="Location Icon" className={styles.footer__location_icon} /> */}
-                        <span>An initiative by Fimkin Advertising</span>
+                        {/* <span>An initiative by Fimkin Advertising</span> */}
                     </div>
                 </div>
                 <div className={styles.footer__links} data-aos="fade-up" data-aos-duration="600" data-aos-delay="500" data-aos-offset="20">
