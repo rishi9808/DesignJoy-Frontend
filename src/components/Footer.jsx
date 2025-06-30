@@ -18,7 +18,7 @@ const Footer = () => {
     const handleCloseModal = () => setIsModalOpen(false);
 
     return (
-        <footer className={styles.footer}>
+        <footer className={styles.footer} id="footer">
             <div className={styles.footer__cta_section} data-aos="fade-up" data-aos-duration="800" data-aos-offset="50">
                 <h2 className={styles.footer__cta_heading}>See if Designvault is right for you. (It totally is.)</h2>
                 <p className={styles.footer__cta_subheading}>

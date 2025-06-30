@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import styles from '../styles/nav.module.css';
 
-const Navigation = ({ isMobile = false, onNavigate, heroStyles, mobileNavOpen = false, onMobileToggle, onMobileClose }) => {
+const Navigation = ({ isMobile = false, onNavigate, heroStyles, mobileNavOpen = false, onMobileToggle, onMobileClose, onJoinWaitlist }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [_mobileNavOpen, _setMobileNavOpen] = useState(false);
 
@@ -17,6 +17,7 @@ const Navigation = ({ isMobile = false, onNavigate, heroStyles, mobileNavOpen = 
     { label: 'Benefits', sectionId: 'benefits' },
     { label: 'Services', sectionId: 'services' },
     { label: 'FAQs', sectionId: 'faq' },
+    { label: 'Join Waitlist', sectionId: 'footer' },
   ], []);
 
 
@@ -93,7 +94,13 @@ const Navigation = ({ isMobile = false, onNavigate, heroStyles, mobileNavOpen = 
   const handleNavClick = (index) => {
     const item = navItems[index];
 
-    if (item.sectionId) {
+    if (item.label === 'Join Waitlist') {
+      // Open the subscription form instead of navigating
+      if (onJoinWaitlist) {
+        onJoinWaitlist();
+      }
+      setActiveIndex(index);
+    } else if (item.sectionId) {
       setActiveIndex(index);
     } else {
       console.log('Login clicked');
@@ -117,13 +124,25 @@ const Navigation = ({ isMobile = false, onNavigate, heroStyles, mobileNavOpen = 
         <ul className={heroStyles?.mobileNavLinks || styles.mobileNavLinks}>
           {navItems.map((item) => ( 
             <li key={item.label}>
-              <a
-                href={`#${item.sectionId}`}
-                className={heroStyles?.mobileNavLink || styles.mobileNavLink}
-                onClick={closeNav}
-              >
-                {item.label === 'I' ? 'Home' : item.label}
-              </a>
+              {item.label === 'Join Waitlist' ? (
+                <button
+                  className={heroStyles?.mobileNavJoinButton || styles.mobileNavJoinButton}
+                  onClick={() => {
+                    if (onJoinWaitlist) onJoinWaitlist();
+                    closeNav();
+                  }}
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <a
+                  href={`#${item.sectionId}`}
+                  className={heroStyles?.mobileNavLink || styles.mobileNavLink}
+                  onClick={closeNav}
+                >
+                  {item.label === 'I' ? 'Home' : item.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -141,7 +160,7 @@ const Navigation = ({ isMobile = false, onNavigate, heroStyles, mobileNavOpen = 
         <ul className={styles.navList}>
           {navItems.map((item, index) => (
             <li key={index} className={styles.navItem}>
-              {item.sectionId ? (
+              {item.sectionId && item.label !== 'Join Waitlist' ? (
                 <a
                   href={`#${item.sectionId}`}
                   className={`${styles.navButton} ${activeIndex === index ? styles.active : styles.inactive}`}

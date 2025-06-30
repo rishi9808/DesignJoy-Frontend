@@ -66,7 +66,7 @@ const Hero = () => {
 
       {!isMobile && (
         <div className={styles.desktopNavOnly}>
-          <Navigation />
+          <Navigation onJoinWaitlist={handleOpenModal} />
         </div>
       )}
 
@@ -77,6 +77,7 @@ const Hero = () => {
           onMobileToggle={handleHamburgerClick}
           onMobileClose={handleCloseNav}
           heroStyles={styles}
+          onJoinWaitlist={handleOpenModal}
         />
       )}
     </div>
