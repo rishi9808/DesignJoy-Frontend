@@ -661,7 +661,7 @@
 /* Responsive adjustments for phone inputs */
 @media (max-width: 480px) {
     .phoneInputContainer {
-        grid-template-columns: calc(100% * 3/ 12) calc(100% * 9.5 / 12);
+        grid-template-columns: calc(100% * 3.4 / 12) calc(100% * 8.6 / 12);
     }
     
     .phonePrefix {
