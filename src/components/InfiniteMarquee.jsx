@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Marquee from 'react-fast-marquee';
 import styles from '../styles/infiniteScroll.module.css';
+import SubscriptionForm from './SubscriptionForm';
 
 // import logo1 from "../assets/Marquee/1.svg"
 // import logo2 from "../assets/Marquee/2.svg"
@@ -15,6 +16,11 @@ import styles from '../styles/infiniteScroll.module.css';
 // ];
 
 const InfiniteMarquee = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleOpenModal = () => setIsModalOpen(true);
+    const handleCloseModal = () => setIsModalOpen(false);
+
     return (
         <div className={styles.marqueeContainer}>
             <Marquee gradient={false} speed={100} pauseOnHover={true}>
@@ -27,12 +33,14 @@ const InfiniteMarquee = () => {
                     />
                     
                 ))} */}
-                <h2 className={styles.marqueeText}>Join WaitList</h2>
-                <h2 className={styles.marqueeText}>Join WaitList</h2>
-                <h2 className={styles.marqueeText}>Join WaitList</h2>
-                <h2 className={styles.marqueeText}>Join WaitList</h2>
-                <h2 className={styles.marqueeText}>Join WaitList</h2>
+                <h2 className={styles.marqueeText} onClick={handleOpenModal}>Join WaitList</h2>
+                <h2 className={styles.marqueeText} onClick={handleOpenModal}>Join WaitList</h2>
+                <h2 className={styles.marqueeText} onClick={handleOpenModal}>Join WaitList</h2>
+                <h2 className={styles.marqueeText} onClick={handleOpenModal}>Join WaitList</h2>
+                <h2 className={styles.marqueeText} onClick={handleOpenModal}>Join WaitList</h2>
             </Marquee>
+            
+            <SubscriptionForm isOpen={isModalOpen} onClose={handleCloseModal} />
         </div>
     );
 };

@@ -1,13 +1,12 @@
 .latestProjects {
     display: flex;
     flex-direction: column;
-    background-color: #f7e6dc;
+    background: linear-gradient(to top, #ff8c42, #ffd1a3);
     overflow: hidden;
     padding-top: 3rem;
     padding-bottom: 6rem;
     position: relative;
     overflow-y: visible;
-
 }
 
 .marqueeContainer {

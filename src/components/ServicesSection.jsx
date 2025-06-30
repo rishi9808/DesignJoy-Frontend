@@ -3,7 +3,7 @@ import styles from '../styles/servicesSection.module.css';
 import brandingImage from '../assets/Services/brand.png';
 import illustrationsImage from '../assets/Services/illustrations.png';
 import socialMediaImage from '../assets/Services/social.png';
-import webDesignImage from '../assets/Services/web.png';
+// import webDesignImage from '../assets/Services/web.png';
 import printPackagingImage from '../assets/Services/print.png';
 
 const ServicesSection = () => {
@@ -58,10 +58,7 @@ const ServicesSection = () => {
             included: [
                 "Logo design",
                 "Branding guidelines",
-                "Business cards",
-                "Labels",
-                "Letterheads",
-                "Brand strategy",
+                "Print ready designs",
                 "Color palette"
             ]
         },
@@ -75,9 +72,7 @@ const ServicesSection = () => {
                 "Character & Mascot Design",
                 "Concept Art",
                 "Custom Illustrations",
-                "Graphic Novels",
                 "Icons",
-                "Infographics"
             ]
         },
         {
@@ -90,39 +85,38 @@ const ServicesSection = () => {
                 "Facebook Graphics",
                 "Instagram Graphics",
                 "LinkedIn Graphics",
-                "Social Media Banners & Posts",
+                "Social Media Banners ",
                 "Twitter Graphics",
-                "Twitch & YouTube Graphics"
+                "Twitch & YouTube Thumbnails"
             ]
         },
+        // {
+        //     id: 4,
+        //     title: "Web Design & Development",
+        //     description: "Modern, responsive websites that convert visitors into customers",
+        //     bgImage: webDesignImage,
+        //     included: [
+        //         "Landing Page Design",
+        //         "E-commerce Websites",
+        //         "Corporate Websites",
+        //         "Portfolio Websites",
+        //         "Mobile Optimization",
+        //         "UI/UX Design",
+        //         "Website Maintenance"
+        //     ]
+        // },
         {
             id: 4,
-            title: "Web Design & Development",
-            description: "Modern, responsive websites that convert visitors into customers",
-            bgImage: webDesignImage,
-            included: [
-                "Landing Page Design",
-                "E-commerce Websites",
-                "Corporate Websites",
-                "Portfolio Websites",
-                "Mobile Optimization",
-                "UI/UX Design",
-                "Website Maintenance"
-            ]
-        },
-        {
-            id: 5,
             title: "Print & Packaging Design",
             description: "Professional print materials and packaging that stand out",
             bgImage: printPackagingImage,
             included: [
                 "Business Cards",
                 "Brochures & Flyers",
-                "Product Packaging",
+                "Product Packaging design",
                 "Posters & Banners",
-                "Magazine Layout",
-                "Book Design",
-                "Trade Show Materials"
+                "Printable Menu Card design",
+                "Trade Show Material design"
             ]
         }
     ];

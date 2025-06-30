@@ -17,7 +17,6 @@ const Navigation = ({ isMobile = false, onNavigate, heroStyles, mobileNavOpen = 
     { label: 'Benefits', sectionId: 'benefits' },
     { label: 'Services', sectionId: 'services' },
     { label: 'FAQs', sectionId: 'faq' },
-    { label: 'Login', sectionId: null }
   ], []);
 
 
@@ -116,7 +115,7 @@ const Navigation = ({ isMobile = false, onNavigate, heroStyles, mobileNavOpen = 
           &times;
         </button>
         <ul className={heroStyles?.mobileNavLinks || styles.mobileNavLinks}>
-          {navItems.slice(0, -1).map((item) => ( 
+          {navItems.map((item) => ( 
             <li key={item.label}>
               <a
                 href={`#${item.sectionId}`}

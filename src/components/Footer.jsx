@@ -42,18 +42,19 @@ const Footer = () => {
                     </div>
                     <div className={styles.footer__location}>
                         {/* <img src={footerImg} alt="Location Icon" className={styles.footer__location_icon} /> */}
-                        <span>An initiative by fimkin advertising</span>
+                        <span>An initiative by Fimkin Advertising</span>
                     </div>
                 </div>
                 <div className={styles.footer__links} data-aos="fade-up" data-aos-duration="600" data-aos-delay="500" data-aos-offset="20">
                     <ul className={styles.footer__links_list}>
-                        <li><a href="#latest-projects">Latest projects</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#services">Services</a></li>
+                        
                     </ul>
                     <ul className={styles.footer__links_list}>
-                        <li><a href="#client-login">Client login</a></li>
-                        <li><a href="#get-started">Get started</a></li>
+                        <li><a href="#howwework">How we work</a></li>
+                        <li><a href="#faq">FAQs</a></li>
                         <li><a href="#terms">Terms & conditions</a></li>
                         <li><a href="#privacy">Privacy policy</a></li>
                     </ul>

@@ -19,6 +19,15 @@
     font-size: 3rem;
     font-weight: 800;
     margin: 0 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.marqueeText:hover {
+    color: #f7e6dc;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(246, 193, 89, 0.928);
 }
 
 @media (max-width: 768px) {

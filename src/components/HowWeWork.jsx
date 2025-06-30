@@ -13,7 +13,7 @@ const HowWeWork = () => {
     {
       number: '01',
       title: 'Pick your plan',
-      description: 'Choose a subscription that fits your needs and login to your personal project board, accessible anytime, anywhere.',
+      description: 'Choose a subscription that fits your needs and login to your personal project portal, accessible anytime, anywhere.',
       image: img1,
       alt: 'Pick your plan',
       imageOnRight: true,
@@ -21,7 +21,7 @@ const HowWeWork = () => {
     {
       number: '02',
       title: 'Submit your requests',
-      description: 'Request as many designs as you want and track every update instantly on our easy-to-use boards – no need for reminders.',
+      description: 'Request as many designs as you want and track every update instantly on our easy-to-use portal – no need for reminders.',
       image: img2,
       alt: 'Submit your requests',
       imageOnRight: false,
@@ -29,7 +29,7 @@ const HowWeWork = () => {
     {
       number: '03',
       title: 'Perfect your design',
-      description: 'Need tweaks? No problem. Share your ideas on dedicated design boards as comments and we\'ll make the updates in no time.',
+      description: 'Need tweaks? No problem. Share your ideas on dedicated design portal as comments and we\'ll do the rework.',
       image: img3,
       alt: 'Perfect your design',
       imageOnRight: true,

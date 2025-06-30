@@ -46,7 +46,7 @@
 
 .footer__brand_location {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 1.5rem;
     min-width: 320px;
     /* background-color: red; */
