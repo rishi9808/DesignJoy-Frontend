@@ -319,6 +319,202 @@
     }
 }
 
+/* Status Message Styles */
+.statusMessage {
+    padding: 20px 24px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font-subheading, Arial, sans-serif);
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    animation: slideIn 0.4s ease-out;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.statusMessage.success {
+    background-color: #e8f5e8;
+    color: #2d5d2d;
+    border-color: #4caf50;
+    box-shadow: 4px 4px 0 #c8e6c9;
+}
+
+.statusMessage.success::before {
+    content: "✓";
+    display: inline-block;
+    margin-right: 8px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #4caf50;
+}
+
+.statusMessage.error {
+    background-color: #ffeaea;
+    color: #d32f2f;
+    border-color: #f44336;
+    box-shadow: 4px 4px 0 #ffcdd2;
+}
+
+.statusMessage.error::before {
+    content: "✗";
+    display: inline-block;
+    margin-right: 8px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #f44336;
+}
+
+.statusMessage.loading {
+    background-color: #fff3e0;
+    color: #ef6c00;
+    border-color: #ff9800;
+    box-shadow: 4px 4px 0 #ffe0b3;
+}
+
+.statusMessage.loading::before {
+    content: "⏳";
+    display: inline-block;
+    margin-right: 8px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Success Message Enhancement */
+.statusMessage.success {
+    background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+}
+
+.statusMessage.error {
+    background: linear-gradient(135deg, #ffeaea 0%, #ffebee 100%);
+}
+
+.statusMessage.loading {
+    background: linear-gradient(135deg, #fff3e0 0%, #fef7ed 100%);
+}
+
+/* Success View Styles */
+.successView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    min-height: 300px;
+}
+
+.successView .modalTitle {
+    color: #2d5d2d;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    animation: celebrateTitle 0.6s ease-out;
+}
+
+.successOnly {
+    font-size: 1.3rem;
+    padding: 30px 40px;
+    margin: 20px 0;
+    max-width: none;
+    box-shadow: 8px 8px 0 #c8e6c9;
+    border: 2px solid #4caf50;
+    line-height: 1.6;
+    animation: celebrateSuccess 0.8s ease-out;
+}
+
+.successSubtext {
+    font-size: 1.1rem;
+    color: #666;
+    font-family: var(--font-subheading, Arial, sans-serif);
+    margin-top: 20px;
+    line-height: 1.5;
+    max-width: 400px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes celebrateTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.9);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes celebrateSuccess {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Success view responsive design */
+@media (max-width: 480px) {
+    .successView {
+        padding: 30px 15px;
+        min-height: 250px;
+    }
+    
+    .successView .modalTitle {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    .successOnly {
+        font-size: 1.1rem;
+        padding: 25px 30px;
+        box-shadow: 6px 6px 0 #c8e6c9;
+    }
+    
+    .successSubtext {
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+}
+
 @media (max-width: 768px) {
     .modalContent {
         padding: 40px 40px 40px 30px;
