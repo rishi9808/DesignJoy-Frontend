@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import styles from '../styles/footer.module.css';
 import SubscriptionForm from './SubscriptionForm';
+import TwitterIcon from '../assets/Footer/twitter.png';
+import FacebookIcon from '../assets/Footer/facebook.png';
+import InstagramIcon from '../assets/Footer/instagram.png';
+import GMBIcon from '../assets/Footer/my-business.png';
+import LinkedInIcon from '../assets/Footer/linkedin.png';
 
 // import logo1 from "../assets/Marquee/1.svg"
 // import logo2 from "../assets/Marquee/2.svg"
@@ -42,7 +47,26 @@ const Footer = () => {
                     <div className={styles.footer__location}>
                         {/* <img src={footerImg} alt="Location Icon" className={styles.footer__location_icon} /> */}
                         {/* <span>An initiative by Fimkin Advertising</span> */}
+                        <span>© 2025 Designvault. All rights reserved.</span>
                     </div>
+                    {/* social icons */}
+                    <div className={styles.footer__social_icons}>
+                        <a href="https://x.com/ThedesignV" target="_blank" rel="noopener noreferrer">
+                            <img src={TwitterIcon} alt="Twitter" className={styles.footer__social_icon} />
+                        </a>
+                        <a href="https://www.facebook.com/thedesignsvault.UAE" target="_blank" rel="noopener noreferrer">
+                            <img src={FacebookIcon} alt="Facebook" className={styles.footer__social_icon} />
+                        </a>
+                        <a href="https://www.instagram.com/thedesignvaultuae/" target="_blank" rel="noopener noreferrer">
+                            <img src={InstagramIcon} alt="Instagram" className={styles.footer__social_icon} />
+                        </a>
+                        <a href="https://g.co/kgs/eayxmTJ" target="_blank" rel="noopener noreferrer">
+                            <img src={GMBIcon} alt="Google My Business" className={styles.footer__social_icon} />
+                        </a>
+                        <a href="https://www.linkedin.com/company/the-designs-vault-uae/" target="_blank" rel="noopener noreferrer">
+                            <img src={LinkedInIcon} alt="LinkedIn" className={styles.footer__social_icon} />
+                        </a>
+                        </div>
                 </div>
                 <div className={styles.footer__links} data-aos="fade-up" data-aos-duration="600" data-aos-delay="500" data-aos-offset="20">
                     <ul className={styles.footer__links_list}>

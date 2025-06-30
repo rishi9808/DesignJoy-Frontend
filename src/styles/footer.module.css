@@ -8,6 +8,7 @@
     font-family: 'Inter', Arial, sans-serif;
     margin-top: 5rem;
     padding: 4rem 0;
+   
 }
 
 .footer__top {
@@ -40,7 +41,7 @@
     align-items: flex-start;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 3.5rem 2rem 0 2rem;
+    padding: 3.5rem 2rem 3.5rem 2rem;
     flex-wrap: wrap;
 }
 
@@ -92,6 +93,46 @@
     width: 40px;
     filter: brightness(0) invert(1);
 
+}
+
+/* Social Icons Styling */
+.footer__social_icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.footer__social_icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.footer__social_icons a:hover {
+    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+    border-color: #ff8c42;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(255, 140, 66, 0.3);
+}
+
+.footer__social_icon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
+}
+
+.footer__social_icons a:hover .footer__social_icon {
+    filter: brightness(0) invert(1);
+    transform: scale(1.1);
 }
 
 .footer__links {
@@ -222,6 +263,23 @@
         text-align: left;
     }
 
+    /* Social Icons Mobile Styles */
+    .footer__social_icons {
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+        justify-content: flex-start;
+    }
+
+    .footer__social_icons a {
+        width: 44px;
+        height: 44px;
+    }
+
+    .footer__social_icon {
+        width: 22px;
+        height: 22px;
+    }
+
     .footer__cta_heading {
         font-size: 36px;
         line-height: 44px;
@@ -309,5 +367,22 @@
 
     .footer__location span {
         font-size: 14px;
+    }
+
+    /* Social Icons Small Mobile Styles */
+    .footer__social_icons {
+        gap: 1rem;
+        margin-top: 1.2rem;
+        flex-wrap: wrap;
+    }
+
+    .footer__social_icons a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer__social_icon {
+        width: 20px;
+        height: 20px;
     }
 }

@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styles from '../styles/servicesSection.module.css';
-import brandingImage from '../assets/Services/brand.png';
-import illustrationsImage from '../assets/Services/illustrations.png';
+import brandingImage from '../assets/Services/logo-service.png';
+import illustrationsImage from '../assets/Services/illustration.jpg';
 import socialMediaImage from '../assets/Services/social.png';
 // import webDesignImage from '../assets/Services/web.png';
-import printPackagingImage from '../assets/Services/print.png';
+import printPackagingImage from '../assets/Services/package.jpg';
 
 const ServicesSection = () => {
     const carouselRef = useRef(null);
@@ -64,19 +64,6 @@ const ServicesSection = () => {
         },
         {
             id: 2,
-            title: "Custom Illustrations & Visuals",
-            description: "Tailored illustrations and visuals to bring ideas to life",
-            bgImage: illustrationsImage,
-            included: [
-                "Book Covers",
-                "Character & Mascot Design",
-                "Concept Art",
-                "Custom Illustrations",
-                "Icons",
-            ]
-        },
-        {
-            id: 3,
             title: "Digital & Social Media Graphics",
             description: "Engaging graphics for all your digital and social needs",
             bgImage: socialMediaImage,
@@ -88,6 +75,19 @@ const ServicesSection = () => {
                 "Social Media Banners ",
                 "Twitter Graphics",
                 "Twitch & YouTube Thumbnails"
+            ]
+        },
+        {
+            id: 3,
+            title: "Custom Illustrations & Visuals",
+            description: "Tailored illustrations and visuals to bring ideas to life",
+            bgImage: illustrationsImage,
+            included: [
+                "Book Covers",
+                "Character & Mascot Design",
+                "Concept Art",
+                "Custom Illustrations",
+                "Icons",
             ]
         },
         // {
