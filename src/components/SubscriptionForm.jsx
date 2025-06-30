@@ -148,352 +148,186 @@ const SubscriptionForm = ({ isOpen, onClose }) => {
                     <div className={styles.decorSquare}></div>
                     <div className={styles.decorTriangle}></div>
                 </div>
-                <h2 className={styles.modalTitle}>Join our exclusive waitlist</h2>
-
-                <form onSubmit={handleSubmit} className={styles.subscriptionForm}>
-                    <div className={styles.formGroup}>
-                        <label htmlFor="name">Full Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                            placeholder="Your full name"
-                        />
-                    </div>
-
-                    <div className={styles.formGroup}>
-                        <label htmlFor="phone">Phone Number</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handlePhoneChange}
-                            required
-                            placeholder="+971501234567"
-                            pattern="\\+971[0-9]{9}"
-                            title="Please enter a valid UAE phone number starting with +971"
-                        />
-                    </div>
-
-                    <div className={styles.formGroup}>
-                        <label htmlFor="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                            placeholder="your@email.com"
-                        />
-                    </div>
-
-                    <div className={styles.formGroup}>
-                        <label htmlFor="whatsapp">WhatsApp Number</label>
-                        <input
-                            type="tel"
-                            id="whatsapp"
-                            name="whatsapp"
-                            value={formData.whatsapp}
-                            onChange={handlePhoneChange}
-                            required
-                            placeholder="+971501234567"
-                            pattern="\\+971[0-9]{9}"
-                            title="Please enter a valid UAE WhatsApp number starting with +971"
-                        />
-                    </div>
-
-                    <div className={styles.formGroup}>
-                        <label>Subscription Type</label>
-                        <div className={styles.radioGroup}>
-                            <label className={`${styles.radioLabel} ${formData.subscriptionType === 'individual' ? styles.selected : ''}`}>
-                                <input
-                                    type="radio"
-                                    name="subscriptionType"
-                                    value="individual"
-                                    checked={formData.subscriptionType === 'individual'}
-                                    onChange={handleChange}
-                                />
-                                Individual
-                            </label>
-                            <label className={`${styles.radioLabel} ${formData.subscriptionType === 'business' ? styles.selected : ''}`}>
-                                <input
-                                    type="radio"
-                                    name="subscriptionType"
-                                    value="business"
-                                    checked={formData.subscriptionType === 'business'}
-                                    onChange={handleChange}
-                                />
-                                Business
-                            </label>
+                
+                {isSubmitted ? (
+                    // Success view
+                    <div className={styles.successView}>
+                        <h2 className={styles.modalTitle}>Welcome Aboard!</h2>
+                        <div className={`${styles.statusMessage} ${styles.success} ${styles.successOnly}`}>
+                            {submitStatus.message}
                         </div>
+                        <p className={styles.successSubtext}>
+                            You'll receive an email confirmation shortly. We're excited to have you on our journey!
+                        </p>
                     </div>
-
-                    {formData.subscriptionType === 'business' && (
-                        <div className={styles.businessSection}>
+                ) : (
+                    // Form view
+                    <>
+                        <h2 className={styles.modalTitle}>Join our exclusive waitlist</h2>
+                        <form onSubmit={handleSubmit} className={styles.subscriptionForm}>
                             <div className={styles.formGroup}>
-                                <label htmlFor="businessName">Business Name</label>
+                                <label htmlFor="name">Full Name</label>
                                 <input
                                     type="text"
-                                    id="businessName"
-                                    name="businessName"
-                                    value={formData.businessName}
+                                    id="name"
+                                    name="name"
+                                    value={formData.name}
                                     onChange={handleChange}
-                                    required={formData.subscriptionType === 'business'}
-                                    placeholder="Your business name"
+                                    required
+                                    placeholder="Your full name"
                                 />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="businessPhone">Business Phone</label>
+                                <label htmlFor="phone">Phone Number</label>
                                 <input
                                     type="tel"
-                                    id="businessPhone"
-                                    name="businessPhone"
-                                    value={formData.businessPhone}
+                                    id="phone"
+                                    name="phone"
+                                    value={formData.phone}
                                     onChange={handlePhoneChange}
-                                    required={formData.subscriptionType === 'business'}
-                                    placeholder="+97121234567"
-                                    pattern="\\+971[0-9]{9}"
-                                    title="Please enter a valid UAE business phone number starting with +971"
+                                    required
+                                    placeholder="+971 58 939 7426"
+                                    title="Please enter a valid UAE phone number starting with +971 (e.g., +971 58 939 7426)"
                                 />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="businessEmail">Business Email</label>
+                                <label htmlFor="email">Email</label>
                                 <input
                                     type="email"
-                                    id="businessEmail"
-                                    name="businessEmail"
-                                    value={formData.businessEmail}
+                                    id="email"
+                                    name="email"
+                                    value={formData.email}
                                     onChange={handleChange}
-                                    required={formData.subscriptionType === 'business'}
-                                    placeholder="business@email.com"
+                                    required
+                                    placeholder="your@email.com"
                                 />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="emirate">Emirate</label>
-                                <select
-                                    id="emirate"
-                                    name="emirate"
-                                    value={formData.emirate}
-                                    onChange={handleChange}
-                                    required={formData.subscriptionType === 'business'}
-                                >
-                                    <option value="">Select an Emirate</option>
-                                    <option value="Abu Dhabi">Abu Dhabi</option>
-                                    <option value="Dubai">Dubai</option>
-                                    <option value="Sharjah">Sharjah</option>
-                                    <option value="Ajman">Ajman</option>
-                                    <option value="Umm Al Quwain">Umm Al Quwain</option>
-                                    <option value="Fujairah">Fujairah</option>
-                                    <option value="Ras Al Khaimah">Ras Al Khaimah</option>
-                                </select>
+                                <label htmlFor="whatsapp">WhatsApp Number</label>
+                                <input
+                                    type="tel"
+                                    id="whatsapp"
+                                    name="whatsapp"
+                                    value={formData.whatsapp}
+                                    onChange={handlePhoneChange}
+                                    required
+                                    placeholder="+971 58 939 7426"
+                                    title="Please enter a valid UAE WhatsApp number starting with +971 (e.g., +971 58 939 7426)"
+                                />
                             </div>
-                        </div>
-                    )}
 
-                    <button type="submit" className={styles.submitButton}>Submit</button>
-                </form>
+                            <div className={styles.formGroup}>
+                                <label>Subscription Type</label>
+                                <div className={styles.radioGroup}>
+                                    <label className={`${styles.radioLabel} ${formData.subscriptionType === 'individual' ? styles.selected : ''}`}>
+                                        <input
+                                            type="radio"
+                                            name="subscriptionType"
+                                            value="individual"
+                                            checked={formData.subscriptionType === 'individual'}
+                                            onChange={handleChange}
+                                        />
+                                        Individual
+                                    </label>
+                                    <label className={`${styles.radioLabel} ${formData.subscriptionType === 'business' ? styles.selected : ''}`}>
+                                        <input
+                                            type="radio"
+                                            name="subscriptionType"
+                                            value="business"
+                                            checked={formData.subscriptionType === 'business'}
+                                            onChange={handleChange}
+                                        />
+                                        Business
+                                    </label>
+                                </div>
+                            </div>
+
+                            {formData.subscriptionType === 'business' && (
+                                <div className={styles.businessSection}>
+                                    <div className={styles.formGroup}>
+                                        <label htmlFor="businessName">Business Name</label>
+                                        <input
+                                            type="text"
+                                            id="businessName"
+                                            name="businessName"
+                                            value={formData.businessName}
+                                            onChange={handleChange}
+                                            required={formData.subscriptionType === 'business'}
+                                            placeholder="Your business name"
+                                        />
+                                    </div>
+
+                                    <div className={styles.formGroup}>
+                                        <label htmlFor="businessPhone">Business Phone</label>
+                                        <input
+                                            type="tel"
+                                            id="businessPhone"
+                                            name="businessPhone"
+                                            value={formData.businessPhone}
+                                            onChange={handlePhoneChange}
+                                            required={formData.subscriptionType === 'business'}
+                                            placeholder="+971 2 123 4567"
+                                            title="Please enter a valid UAE business phone number starting with +971 (e.g., +971 2 123 4567)"
+                                        />
+                                    </div>
+
+                                    <div className={styles.formGroup}>
+                                        <label htmlFor="businessEmail">Business Email</label>
+                                        <input
+                                            type="email"
+                                            id="businessEmail"
+                                            name="businessEmail"
+                                            value={formData.businessEmail}
+                                            onChange={handleChange}
+                                            required={formData.subscriptionType === 'business'}
+                                            placeholder="business@email.com"
+                                        />
+                                    </div>
+
+                                    <div className={styles.formGroup}>
+                                        <label htmlFor="emirate">Emirate</label>
+                                        <select
+                                            id="emirate"
+                                            name="emirate"
+                                            value={formData.emirate}
+                                            onChange={handleChange}
+                                            required={formData.subscriptionType === 'business'}
+                                        >
+                                            <option value="">Select an Emirate</option>
+                                            <option value="Abu Dhabi">Abu Dhabi</option>
+                                            <option value="Dubai">Dubai</option>
+                                            <option value="Sharjah">Sharjah</option>
+                                            <option value="Ajman">Ajman</option>
+                                            <option value="Umm Al Quwain">Umm Al Quwain</option>
+                                            <option value="Fujairah">Fujairah</option>
+                                            <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            )}
+
+                            {submitStatus.message && !isSubmitted && (
+                                <div className={`${styles.statusMessage} ${styles[submitStatus.type]}`}>
+                                    {submitStatus.message}
+                                </div>
+                            )}
+
+                            <button 
+                                type="submit" 
+                                className={styles.submitButton}
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? 'Joining Waitlist...' : 'Join the Waitlist'}
+                            </button>
+                        </form>
+                    </>
+                )}
             </div>
         </div>
-        
-        {isSubmitted ? (
-          // Success view
-          <div className={styles.successView}>
-            <h2 className={styles.modalTitle}>Welcome Aboard!</h2>
-            <div className={`${styles.statusMessage} ${styles.success} ${styles.successOnly}`}>
-              {submitStatus.message}
-            </div>
-            <p className={styles.successSubtext}>
-              You'll receive an email confirmation shortly. We're excited to have you on our journey!
-            </p>
-          </div>
-        ) : (
-          // Form view
-          <>
-            <h2 className={styles.modalTitle}>Join Waitlist</h2>
-            <form onSubmit={handleSubmit} className={styles.subscriptionForm}>
-          <div className={styles.formGroup}>
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              placeholder="Your full name"
-            />
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="phone">Phone</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handlePhoneChange}
-              required
-              placeholder="+971 58 939 7426"
-              title="Please enter a valid UAE phone number starting with +971 (e.g., +971 58 939 7426)"
-            />
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              placeholder="your@email.com"
-            />
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="whatsapp">WhatsApp</label>
-            <input
-              type="tel"
-              id="whatsapp"
-              name="whatsapp"
-              value={formData.whatsapp}
-              onChange={handlePhoneChange}
-              required
-              placeholder="+971 58 939 7426"
-              title="Please enter a valid UAE WhatsApp number starting with +971 (e.g., +971 58 939 7426)"
-            />
-          </div>
-
-          <div className={styles.formGroup}>
-            <label>Subscription Type</label>
-            <div className={styles.radioGroup}>
-              <label
-                className={`${styles.radioLabel} ${
-                  formData.subscriptionType === "individual"
-                    ? styles.selected
-                    : ""
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="subscriptionType"
-                  value="individual"
-                  checked={formData.subscriptionType === "individual"}
-                  onChange={handleChange}
-                />
-                Individual
-              </label>
-              <label
-                className={`${styles.radioLabel} ${
-                  formData.subscriptionType === "business"
-                    ? styles.selected
-                    : ""
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="subscriptionType"
-                  value="business"
-                  checked={formData.subscriptionType === "business"}
-                  onChange={handleChange}
-                />
-                Business
-              </label>
-            </div>
-          </div>
-
-          {formData.subscriptionType === "business" && (
-            <div className={styles.businessSection}>
-              <div className={styles.formGroup}>
-                <label htmlFor="businessName">Business Name</label>
-                <input
-                  type="text"
-                  id="businessName"
-                  name="businessName"
-                  value={formData.businessName}
-                  onChange={handleChange}
-                  required={formData.subscriptionType === "business"}
-                  placeholder="Your business name"
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="businessPhone">Business Phone</label>
-                <input
-                  type="tel"
-                  id="businessPhone"
-                  name="businessPhone"
-                  value={formData.businessPhone}
-                  onChange={handlePhoneChange}
-                  required={formData.subscriptionType === "business"}
-                  placeholder="+971 2 123 4567"
-                  title="Please enter a valid UAE business phone number starting with +971 (e.g., +971 2 123 4567)"
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="businessEmail">Business Email</label>
-                <input
-                  type="email"
-                  id="businessEmail"
-                  name="businessEmail"
-                  value={formData.businessEmail}
-                  onChange={handleChange}
-                  required={formData.subscriptionType === "business"}
-                  placeholder="business@email.com"
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="emirate">Emirate</label>
-                <select
-                  id="emirate"
-                  name="emirate"
-                  value={formData.emirate}
-                  onChange={handleChange}
-                  required={formData.subscriptionType === "business"}
-                >
-                  <option value="">Select an Emirate</option>
-                  <option value="Abu Dhabi">Abu Dhabi</option>
-                  <option value="Dubai">Dubai</option>
-                  <option value="Sharjah">Sharjah</option>
-                  <option value="Ajman">Ajman</option>
-                  <option value="Umm Al Quwain">Umm Al Quwain</option>
-                  <option value="Fujairah">Fujairah</option>
-                  <option value="Ras Al Khaimah">Ras Al Khaimah</option>
-                </select>
-              </div>
-            </div>
-          )}
-
-          {submitStatus.message && !isSubmitted && (
-            <div className={`${styles.statusMessage} ${styles[submitStatus.type]}`}>
-              {submitStatus.message}
-            </div>
-          )}
-
-          <button 
-            type="submit" 
-            className={styles.submitButton}
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'Joining Waitlist...' : 'Join the Waitlist'}
-          </button>
-        </form>
-        </>
-        )}
-      </div>
-    </div>
-  );
+    );
 };
 
 export default SubscriptionForm;
