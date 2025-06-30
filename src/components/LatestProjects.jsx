@@ -10,14 +10,14 @@ import LP5 from "../assets/LatestProjects/project-img.avif"
 import LP6 from "../assets/LatestProjects/lp-6.png"
 
 
-import badge from "../assets/LatestProjects/badge.svg"
+// import badge from "../assets/LatestProjects/badge.svg"
 
 function LatestProjects() {
   const projects = [LP1, LP2, LP3, LP4, LP5, LP6];
 
   return (
     <div className={styles.latestProjects}>
-      <img src={badge} alt="" className={styles.badge} />
+      {/* <img src={badge} alt="" className={styles.badge} /> */}
       <Marquee
         speed={40}
         gradient={false}
