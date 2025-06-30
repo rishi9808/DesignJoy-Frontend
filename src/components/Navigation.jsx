@@ -17,7 +17,6 @@ const Navigation = ({ isMobile = false, onNavigate, heroStyles, mobileNavOpen = 
     { label: 'Benefits', sectionId: 'benefits' },
     { label: 'Services', sectionId: 'services' },
     { label: 'FAQs', sectionId: 'faq' },
-    { label: 'Login', sectionId: null }
   ], []);
 
 

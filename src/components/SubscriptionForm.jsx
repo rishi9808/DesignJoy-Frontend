@@ -85,11 +85,11 @@ const SubscriptionForm = ({ isOpen, onClose }) => {
                     <div className={styles.decorSquare}></div>
                     <div className={styles.decorTriangle}></div>
                 </div>
-                <h2 className={styles.modalTitle}>Join Waitlist</h2>
+                <h2 className={styles.modalTitle}>Join our exclusive waitlist</h2>
 
                 <form onSubmit={handleSubmit} className={styles.subscriptionForm}>
                     <div className={styles.formGroup}>
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name">Full Name</label>
                         <input
                             type="text"
                             id="name"
@@ -102,7 +102,7 @@ const SubscriptionForm = ({ isOpen, onClose }) => {
                     </div>
 
                     <div className={styles.formGroup}>
-                        <label htmlFor="phone">Phone</label>
+                        <label htmlFor="phone">Phone Number</label>
                         <input
                             type="tel"
                             id="phone"
@@ -130,7 +130,7 @@ const SubscriptionForm = ({ isOpen, onClose }) => {
                     </div>
 
                     <div className={styles.formGroup}>
-                        <label htmlFor="whatsapp">WhatsApp</label>
+                        <label htmlFor="whatsapp">WhatsApp Number</label>
                         <input
                             type="tel"
                             id="whatsapp"

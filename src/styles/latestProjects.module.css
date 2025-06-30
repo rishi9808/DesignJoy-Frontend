@@ -1,7 +1,7 @@
 .latestProjects {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to top, #ff8c42, #ffb366);
+    background: linear-gradient(to top, #ff8c42, #ffd1a3);
     overflow: hidden;
     padding-top: 3rem;
     padding-bottom: 6rem;

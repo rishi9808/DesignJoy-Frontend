@@ -1,6 +1,6 @@
 .indexContainer {
   min-height: 100vh;
-  background: linear-gradient(to top, #ffb366, #ffd1a3, #ffffff);
+  background: linear-gradient(to top, #ffd1a3, #ffd1a3, #ffffff);
   position: relative;
   overflow: hidden;
 }
