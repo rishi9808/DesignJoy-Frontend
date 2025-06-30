@@ -22,7 +22,6 @@ const Footer = () => {
             <div className={styles.footer__cta_section} data-aos="fade-up" data-aos-duration="800" data-aos-offset="50">
                 <h2 className={styles.footer__cta_heading}>See if Designvault is right for you. (It totally is.)</h2>
                 <p className={styles.footer__cta_subheading}>
-                    Get a guided tour through Designvault, and find out how you and your team can change the way you source design, forever.
                 </p>
                 <button className={styles.footer__cta_button} onClick={handleOpenModal} data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">Join Waitlist</button>
             </div>
