@@ -4,12 +4,12 @@ import styles from "../styles/subscriptionForm.module.css";
 const SubscriptionForm = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
         name: '',
-        phone: '+971',
+        phoneNumber: '',
         email: '',
-        whatsapp: '+971',
+        whatsappNumber: '',
         subscriptionType: 'individual',
         businessName: '',
-        businessPhone: '+971',
+        businessPhoneNumber: '',
         businessEmail: '',
         emirate: ''
   });
@@ -60,12 +60,12 @@ const SubscriptionForm = ({ isOpen, onClose }) => {
       const formDataToSend = new FormData();
       formDataToSend.append('timestamp', new Date().toISOString());
       formDataToSend.append('name', formData.name);
-      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('phone', `+971${formData.phoneNumber.replace(/\s/g, '')}`);
       formDataToSend.append('email', formData.email);
-      formDataToSend.append('whatsapp', formData.whatsapp);
+      formDataToSend.append('whatsapp', `+971${formData.whatsappNumber.replace(/\s/g, '')}`);
       formDataToSend.append('subscriptionType', formData.subscriptionType);
       formDataToSend.append('businessName', formData.subscriptionType === 'business' ? formData.businessName : '');
-      formDataToSend.append('businessPhone', formData.subscriptionType === 'business' ? formData.businessPhone : '');
+      formDataToSend.append('businessPhone', formData.subscriptionType === 'business' ? `+971${formData.businessPhoneNumber.replace(/\s/g, '')}` : '');
       formDataToSend.append('businessEmail', formData.subscriptionType === 'business' ? formData.businessEmail : '');
       formDataToSend.append('emirate', formData.subscriptionType === 'business' ? formData.emirate : '');
 
@@ -90,12 +90,12 @@ const SubscriptionForm = ({ isOpen, onClose }) => {
         setIsSubmitted(false);
         setFormData({
           name: "",
-          phone: "+971",
+          phoneNumber: "",
           email: "",
-          whatsapp: "+971",
+          whatsappNumber: "",
           subscriptionType: "individual",
           businessName: "",
-          businessPhone: "+971",
+          businessPhoneNumber: "",
           businessEmail: "",
           emirate: "",
         });
@@ -116,19 +116,16 @@ const SubscriptionForm = ({ isOpen, onClose }) => {
   const handlePhoneChange = (e) => {
     const { name, value } = e.target;
     
-        if (value.startsWith('+971')) {
-            setFormData({ ...formData, [name]: value });
-        } else if (value === '+97') {
-            setFormData({ ...formData, [name]: '+971' });
-        } else if (value === '+9' || value === '+' || value === '') {
-            setFormData({ ...formData, [name]: '+971' });
-        } else {
-            if (!value.startsWith('+')) {
-                setFormData({ ...formData, [name]: '+971' + value.replace(/\D/g, '') });
-            } else {
-                setFormData({ ...formData, [name]: value });
-            }
-        }
+    // Remove non-digits and spaces, then limit to 9 digits
+    let cleanValue = value.replace(/[^0-9\s]/g, '');
+
+    // Limit to 9 digits (ignoring spaces)
+    const digitsOnly = cleanValue.replace(/\s/g, '');
+    if (digitsOnly.length > 9) {
+      return; // Don't update if more than 9 digits
+    }
+    
+    setFormData({ ...formData, [name]: cleanValue });
   };
 
   const handleOverlayClick = (e) => {
@@ -179,17 +176,29 @@ const SubscriptionForm = ({ isOpen, onClose }) => {
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="phone">Phone Number</label>
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    value={formData.phone}
-                                    onChange={handlePhoneChange}
-                                    required
-                                    placeholder="+971 58 939 7426"
-                                    title="Please enter a valid UAE phone number starting with +971 (e.g., +971 58 939 7426)"
-                                />
+                                <label htmlFor="phoneNumber">Phone Number</label>
+                                <div className={styles.phoneInputContainer}>
+                                    <input
+                                        type="text"
+                                        value="+971"
+                                        className={styles.phonePrefix}
+                                        readOnly
+                                        tabIndex="-1"
+                                    />
+                                    <input
+                                        type="tel"
+                                        id="phoneNumber"
+                                        name="phoneNumber"
+                                        value={formData.phoneNumber}
+                                        onChange={handlePhoneChange}
+                                        required
+                                        className={styles.phoneMain}
+                                        placeholder="50 123 4567"
+                                        inputMode="numeric"
+                                        maxLength="11"
+                                        title="Please enter a valid UAE phone number (9 digits)"
+                                    />
+                                </div>
                             </div>
 
                             <div className={styles.formGroup}>
@@ -206,17 +215,28 @@ const SubscriptionForm = ({ isOpen, onClose }) => {
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="whatsapp">WhatsApp Number</label>
-                                <input
-                                    type="tel"
-                                    id="whatsapp"
-                                    name="whatsapp"
-                                    value={formData.whatsapp}
-                                    onChange={handlePhoneChange}
-                                    required
-                                    placeholder="+971 58 939 7426"
-                                    title="Please enter a valid UAE WhatsApp number starting with +971 (e.g., +971 58 939 7426)"
-                                />
+                                <label htmlFor="whatsappNumber">WhatsApp Number</label>
+                                <div className={styles.phoneInputContainer}>
+                                    <input
+                                        type="text"
+                                        value="+971"
+                                        className={styles.phonePrefix}
+                                        readOnly
+                                        tabIndex="-1"
+                                    />
+                                    <input
+                                        type="tel"
+                                        id="whatsappNumber"
+                                        name="whatsappNumber"
+                                        value={formData.whatsappNumber}
+                                        onChange={handlePhoneChange}
+                                        required
+                                        className={styles.phoneMain}
+                                        placeholder="50 123 4567"
+                                        maxLength="11"
+                                        title="Please enter a valid UAE WhatsApp number (9 digits)"
+                                    />
+                                </div>
                             </div>
 
                             <div className={styles.formGroup}>
@@ -261,17 +281,28 @@ const SubscriptionForm = ({ isOpen, onClose }) => {
                                     </div>
 
                                     <div className={styles.formGroup}>
-                                        <label htmlFor="businessPhone">Business Phone</label>
-                                        <input
-                                            type="tel"
-                                            id="businessPhone"
-                                            name="businessPhone"
-                                            value={formData.businessPhone}
-                                            onChange={handlePhoneChange}
-                                            required={formData.subscriptionType === 'business'}
-                                            placeholder="+971 2 123 4567"
-                                            title="Please enter a valid UAE business phone number starting with +971 (e.g., +971 2 123 4567)"
-                                        />
+                                        <label htmlFor="businessPhoneNumber">Business Phone</label>
+                                        <div className={styles.phoneInputContainer}>
+                                            <input
+                                                type="text"
+                                                value="+971"
+                                                className={styles.phonePrefix}
+                                                readOnly
+                                                tabIndex="-1"
+                                            />
+                                            <input
+                                                type="tel"
+                                                id="businessPhoneNumber"
+                                                name="businessPhoneNumber"
+                                                value={formData.businessPhoneNumber}
+                                                onChange={handlePhoneChange}
+                                                required={formData.subscriptionType === 'business'}
+                                                className={styles.phoneMain}
+                                                placeholder="20 123 4567"
+                                                maxLength="11"
+                                                title="Please enter a valid UAE business phone number (9 digits)"
+                                            />
+                                        </div>
                                     </div>
 
                                     <div className={styles.formGroup}>

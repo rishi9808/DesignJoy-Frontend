@@ -602,3 +602,76 @@
         font-size: 28px;
     }
 }
+
+/* Phone Input Container Styles */
+.phoneInputContainer {
+    display: grid;
+    grid-template-columns: calc(100% * 2.7 / 12) calc(100% * 9.3 / 12);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    position: relative;
+}
+
+.phoneInputContainer:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+.phoneInputContainer:focus-within {
+    border-color: #ff8c42;
+    box-shadow: 0 4px 16px rgba(255, 140, 66, 0.3), 0 0 0 3px rgba(255, 140, 66, 0.1);
+    transform: translateY(-2px);
+}
+
+.phonePrefix {
+    padding: 16px 8px;
+    border: none;
+    background-color: #f8f9fa;
+    border-right-width: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    text-align: center;
+    outline: none;
+    cursor: default;
+    font-family: var(--font-base, 'Inter', sans-serif);
+}
+
+.phoneMain {
+    padding: 16px 20px 16px 12px;
+    border: none;
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+    font-family: var(--font-base, 'Inter', sans-serif);
+    color: black;
+}
+
+.phoneMain::placeholder {
+    color: #aaa;
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+/* Responsive adjustments for phone inputs */
+@media (max-width: 480px) {
+    .phoneInputContainer {
+        grid-template-columns: calc(100% * 3/ 12) calc(100% * 9.5 / 12);
+    }
+    
+    .phonePrefix {
+        padding: 14px 6px;
+        font-size: 0.9rem;
+        
+    }
+    
+    .phoneMain {
+        padding: 14px 16px 14px 8px;
+        font-size: 0.9rem;
+    }
+}
