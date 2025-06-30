@@ -46,7 +46,7 @@ const Hero = () => {
 
       <div className={styles.mainContent}>
         <h1 className={styles.mainTitle} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-          Unlimited <span style={{ color: '#ff6638' }}>Creative Design.</span> One Simple Subscription.
+          Premium <span style={{ color: '#ff6638' }}>Creative Design.</span> One Simple Subscription.
         </h1>
 
         <p className={styles.mainSubtitle} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
@@ -58,7 +58,7 @@ const Hero = () => {
         </button>
 
         <p className={styles.guaranteeText} data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
-          Designs you'll, guaranteed
+          Designs you'll love, guaranteed.
         </p>
       </div>
 
