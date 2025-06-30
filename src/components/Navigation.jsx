@@ -115,7 +115,7 @@ const Navigation = ({ isMobile = false, onNavigate, heroStyles, mobileNavOpen = 
           &times;
         </button>
         <ul className={heroStyles?.mobileNavLinks || styles.mobileNavLinks}>
-          {navItems.slice(0, -1).map((item) => ( 
+          {navItems.map((item) => ( 
             <li key={item.label}>
               <a
                 href={`#${item.sectionId}`}
