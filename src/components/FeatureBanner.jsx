@@ -12,7 +12,7 @@ const features = [
     },
     {
         icon: <img src={icon2} alt="Browser icon" className={styles.featureIcon} />,
-        text: "Receive your designs usually under 48 hours."
+        text: "Receive your designs under 48 hours."
     },
     {
         icon: <img src={icon3} alt="Repeat icon" className={styles.featureIcon} />,
