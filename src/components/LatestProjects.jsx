@@ -7,12 +7,13 @@ import LP2 from "../assets/LatestProjects/lp-2.jpg"
 import LP3 from "../assets/LatestProjects/lp-3.jpg"
 import LP4 from "../assets/LatestProjects/lp-4.jpg"
 import LP5 from "../assets/LatestProjects/project-img.avif"
+import LP6 from "../assets/LatestProjects/lp-6.png"
 
 
 import badge from "../assets/LatestProjects/badge.svg"
 
 function LatestProjects() {
-  const projects = [LP1, LP2, LP3, LP4, LP5];
+  const projects = [LP1, LP2, LP3, LP4, LP5, LP6];
 
   return (
     <div className={styles.latestProjects}>
@@ -27,7 +28,7 @@ function LatestProjects() {
           <img
             key={index}
             // src={project}
-            src={LP5}
+            src={LP6}
             alt={`Latest project ${index + 1}`}
             className={styles.lpImg}
           />
