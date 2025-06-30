@@ -3,8 +3,8 @@ import styles from '../styles/faqSection.module.css';
 
 const faqs = [
     {
-        question: "How do I subscribe to Designvault?",
-        answer: <p>Easy peasy! Just click the ‘Subscribe’ button, choose your plan, and you’re all set. Welcome to the Designvault family!</p>,
+        question: "How do I subscribe to Designsvault?",
+        answer: <p>Easy peasy! Just click the ‘Subscribe’ button, choose your plan, and you’re all set. Welcome to the Designsvault family!</p>,
     },
     {
         question: "How do I request a design?",

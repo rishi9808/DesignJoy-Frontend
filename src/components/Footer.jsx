@@ -25,7 +25,7 @@ const Footer = () => {
     return (
         <footer className={styles.footer} id="footer">
             <div className={styles.footer__cta_section} data-aos="fade-up" data-aos-duration="800" data-aos-offset="50">
-                <h2 className={styles.footer__cta_heading}>See if Designvault is right for you. (It totally is.)</h2>
+                <h2 className={styles.footer__cta_heading}>See if Designsvault is right for you. (It totally is.)</h2>
                 <p className={styles.footer__cta_subheading}>
                 </p>
                 <button className={styles.footer__cta_button} onClick={handleOpenModal} data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">Join Waitlist</button>
@@ -42,12 +42,12 @@ const Footer = () => {
             <div className={styles.footer__bottom} data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" data-aos-offset="30">
                 <div className={styles.footer__brand_location} data-aos="fade-up" data-aos-duration="600" data-aos-delay="400" data-aos-offset="20">
                     <div className={styles.footer__brand}>
-                        <img src={logo} alt="Designvault Logo" className={styles.footer__logo} />
+                        <img src={logo} alt="Designsvault Logo" className={styles.footer__logo} />
                     </div>
                     <div className={styles.footer__location}>
                         {/* <img src={footerImg} alt="Location Icon" className={styles.footer__location_icon} /> */}
                         {/* <span>An initiative by Fimkin Advertising</span> */}
-                        <span>© 2025 Designvault. All rights reserved.</span>
+                        
                     </div>
                     {/* social icons */}
                     <div className={styles.footer__social_icons}>
