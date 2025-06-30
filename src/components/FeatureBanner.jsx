@@ -8,15 +8,15 @@ import icon3 from '../assets/Features/3.png';
 const features = [
     {
         icon: <img src={icon1} alt="Subscribe icon" className={styles.featureIcon} />,
-        text: "Subscribe to a plan & request as many designs as you'd like."
+        text: "Subscribe to a plan & request designs as you need them."
     },
     {
         icon: <img src={icon2} alt="Browser icon" className={styles.featureIcon} />,
-        text: "Receive your design within a few business days on average, Monday to Friday."
+        text: "Receive your designs usually under 48 hours."
     },
     {
         icon: <img src={icon3} alt="Repeat icon" className={styles.featureIcon} />,
-        text: "We'll revise the designs until you're 100% satisfied."
+        text: "Request revisions until you're satisfied."
     }
 ];
 
