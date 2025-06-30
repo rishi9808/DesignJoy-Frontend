@@ -16,13 +16,13 @@ import icon6 from "../assets/Membership/6.png"
 const benefits = [
     {
         icon: icon1,
-        title: 'Design board',
-        desc: `Add as many design requests to your board as you'd like.`
+        title: 'Design portal',
+        desc: `Add your design request through the portal.`
     },
     {
         icon: icon2,
         title: 'Lightning fast delivery',
-        desc: 'Get your design one at a time in just a few days on average.'
+        desc: 'Get your design one at a time on an average of 48 hours.'
     },
     {
         icon: icon3,
@@ -37,7 +37,7 @@ const benefits = [
     {
         icon: icon5,
         title: 'Flexible and scalable',
-        desc: 'Scale up or down as needed, and pause or cancel at anytime.'
+        desc: 'Scale up your design needs as your business grows.'
     },
     {
         icon: icon6,
