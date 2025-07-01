@@ -57,7 +57,7 @@ const Footer = () => {
                         <a href="https://www.facebook.com/thedesignsvault.UAE" target="_blank" rel="noopener noreferrer">
                             <img src={FacebookIcon} alt="Facebook" className={styles.footer__social_icon} />
                         </a>
-                        <a href="https://www.instagram.com/thedesignvaultuae/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/thedesignsvaultuae/" target="_blank" rel="noopener noreferrer">
                             <img src={InstagramIcon} alt="Instagram" className={styles.footer__social_icon} />
                         </a>
                         <a href="https://g.co/kgs/eayxmTJ" target="_blank" rel="noopener noreferrer">
