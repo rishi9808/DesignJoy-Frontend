@@ -116,7 +116,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://g.co/kgs/eayxmTJ"
+              href="https://maps.app.goo.gl/HsmnnKD9encRnDUF9"
               target="_blank"
               rel="noopener noreferrer"
             >
