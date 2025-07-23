@@ -47,6 +47,7 @@ const Footer = () => {
                     <div className={styles.footer__location}>
                         {/* <img src={footerImg} alt="Location Icon" className={styles.footer__location_icon} /> */}
                         {/* <span>An initiative by Fimkin Advertising</span> */}
+                        <span>A Digital Creek (FZE) venture</span>
                         
                     </div>
                     {/* social icons */}
