@@ -13,7 +13,6 @@ const PrivacyPolicy = () => {
       offset: 100,
       disable: false
     });
-    
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
@@ -33,8 +32,8 @@ const PrivacyPolicy = () => {
           <Link 
             to="/" 
             className={styles.backButton}
-            data-aos="fade-right" 
-            data-aos-duration="600" 
+            data-aos="fade-right"
+            data-aos-duration="600"
             data-aos-delay="200"
           >
             ← Back to Home
@@ -62,6 +61,9 @@ const PrivacyPolicy = () => {
                 <li data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
                   Non-personal information such as browser type, pages visited, and time spent on the site.
                 </li>
+                <li data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                  Information you provide through LinkedIn Lead Gen Forms or other social media platforms, including professional data like job title and company.
+                </li>
               </ul>
             </div>
           </section>
@@ -80,6 +82,12 @@ const PrivacyPolicy = () => {
                 <li data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
                   Send occasional emails or updates (only if you opt-in)
                 </li>
+                <li data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+                  Provide relevant service information, updates, or promotional content related to your interests.
+                </li>
+                <li data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+                  Contact you for feedback or market research purposes (only if you’ve provided consent).
+                </li>
               </ul>
             </div>
           </section>
@@ -97,8 +105,19 @@ const PrivacyPolicy = () => {
             <h2 className={styles.sectionTitle}>4. Third-Party Services</h2>
             <div className={styles.sectionContent}>
               <p>
-                We do not sell, trade, or share your personal information with third parties, except when required by law or for basic website functionality (e.g., analytics or contact forms).
+                We do not sell, trade, or share your personal information with third parties, except:
               </p>
+              <ul className={styles.infoList}>
+                <li data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                  When required by law
+                </li>
+                  <li data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                    For basic functionality such as analytics (e.g., Google Analytics), email services (e.g., Mailchimp), advertising platforms (e.g., LinkedIn), or form processing tools.
+                </li>
+                <li data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                  All third-party services used are GDPR-compliant or offer equivalent data protection safeguards.
+                </li>
+              </ul>
             </div>
           </section>
 
@@ -117,6 +136,9 @@ const PrivacyPolicy = () => {
               <p>
                 You may request access to the personal information we hold about you and request correction or deletion at any time.
               </p>
+              <p>
+                 You can also withdraw consent or unsubscribe from any communications by following the opt-out instructions in our emails or contacting us directly.
+              </p>
             </div>
           </section>
 
@@ -125,6 +147,9 @@ const PrivacyPolicy = () => {
             <div className={styles.sectionContent}>
               <p>
                 We may update this Privacy Policy from time to time. Any changes will be posted on this page with a revised effective date.
+              </p>
+              <p>
+                We encourage you to review this policy periodically to stay informed.
               </p>
             </div>
           </section>
