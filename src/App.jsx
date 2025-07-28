@@ -13,6 +13,7 @@ import ServicesSection from './components/ServicesSection'
 import FAQSection from './components/FAQSection'
 import Footer from './components/Footer'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import Cal from './components/Cal'
 
 const HomePage = () => {
   return (
@@ -27,6 +28,7 @@ const HomePage = () => {
       <ServicesSection />
       <FAQSection />
       <Footer />
+      <Cal />
     </div>
   );
 };
